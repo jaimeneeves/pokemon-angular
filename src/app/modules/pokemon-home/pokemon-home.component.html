@@ -15,22 +15,23 @@
     <a class="p-2 text-muted" href="#">Name</a>
   </nav>
 </div>
-<div class="row">
-  <div class="col-md-6">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Nome pokemon</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a routerLink="1" class="btn btn-primary">Mais detalhes</a>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-6">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Nome pokemon</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a routerLink="2" class="btn btn-primary">Mais detalhes</a>
+
+<div class="pokemon-home">
+  <div class="row">
+    <div class="col-md-3" *ngFor="let pokemon of pokemons.results">
+      <div class="card">
+        <div class="card-body">
+          <div class="text-center">
+            <img src="{{pokemon.detail.sprites.front_default}}" alt="Card image pokemon">
+          </div>
+          <h5 class="card-title text-capitalize text-center">
+            <a href="">{{pokemon.name}}</a>
+          </h5>
+        </div>
+        <div class="card-header font-weight-bolder">Abilidades</div>
+        <ul class="list-group list-group-flush" >
+          <li class="list-group-item" *ngFor="let abilityItem of pokemon.detail.abilities">{{abilityItem.ability.name}}</li>
+        </ul>
       </div>
     </div>
   </div>
