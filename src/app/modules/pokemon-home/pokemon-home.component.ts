@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PokemonService } from 'src/app/services/pokemon/pokemon.service';
 import { IResPokemon, initResponse } from 'src/app/modules/pokemon-home/models/home';
+import { IListingOptions } from 'src/app/shared/utils';
 
 @Component({
   selector: 'app-pokemon-home',
@@ -10,6 +11,13 @@ import { IResPokemon, initResponse } from 'src/app/modules/pokemon-home/models/h
 export class PokemonHomeComponent implements OnInit {
 
   public pokemons: IResPokemon = initResponse;
+  public next: string;
+  public prev: string;
+
+  page: number = 1;
+  listOpt: IListingOptions = {
+    offset: 0
+  };
 
   constructor(private pokemonService: PokemonService) { }
 
@@ -20,9 +28,16 @@ export class PokemonHomeComponent implements OnInit {
   /**
    * List all pokemon
    */
-  list(){
-    this.pokemonService.findAll().subscribe({
+  list(): void {
+
+    this.listOpt.offset = ((this.page - 1) * this.pokemonService.getLimit());
+
+    this.pokemonService.findAll(this.listOpt).subscribe({
       next: async (data: any) => {
+
+        this.next = data.next ? data.next : "";
+        this.prev = data.previous ? data.previous: "";
+
         if(data.results.length > 0) {
           const results = data.results.map(async item => {
             const obj = {};
@@ -39,6 +54,20 @@ export class PokemonHomeComponent implements OnInit {
       error: (e) => {},
       complete: () => {}
     });
+  }
+
+  paginationNext(page:number) {
+    const nextPage = page + 1;
+    this.page = nextPage;
+    this.list();
+  }
+
+  paginationPrev(page:number) {
+    if(page > 0) {
+      const nextPage = page - 1;
+      this.page = nextPage;
+      this.list();
+    }
   }
 
 }

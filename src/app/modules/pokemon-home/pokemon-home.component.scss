@@ -5,10 +5,10 @@
 }
 
 .pokemon-pagination {
-  margin-bottom: 3rem;
-  margin-top: 3rem;
+  margin-bottom: 2rem;
+  margin-top: 1rem;
 
-  a + a {
+  button + button {
     margin-left: 5px;
   }
   > .btn {

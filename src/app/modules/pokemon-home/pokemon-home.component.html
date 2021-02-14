@@ -1,24 +1,17 @@
-<div class="nav-scroller py-2 mb-5 mt-4">
-  <div> Mais consultados</div>
-  <nav class="nav d-flex justify-content-between">
-    <a class="p-2 text-muted" href="#">Name</a>
-    <a class="p-2 text-muted" href="#">Name</a>
-    <a class="p-2 text-muted" href="#">Name</a>
-    <a class="p-2 text-muted" href="#">Name</a>
-    <a class="p-2 text-muted" href="#">Name</a>
-    <a class="p-2 text-muted" href="#">Name</a>
-    <a class="p-2 text-muted" href="#">Name</a>
-    <a class="p-2 text-muted" href="#">Name</a>
-    <a class="p-2 text-muted" href="#">Name</a>
-    <a class="p-2 text-muted" href="#">Name</a>
-    <a class="p-2 text-muted" href="#">Name</a>
-    <a class="p-2 text-muted" href="#">Name</a>
-  </nav>
+<div class="row mt-3">
+  <div class="col-md-12">
+    <nav class="pokemon-pagination text-right">
+      <button class="btn"
+        [class.btn-outline-primary]="prev"
+        [ngClass]="{'btn-outline-secondary disabled': !prev}" (click)="paginationPrev(page)">Anterior</button>
+      <button type="button" class="btn btn-outline-primary" (click)="paginationNext(page)">Próxima</button>
+    </nav>
+  </div>
 </div>
 
 <div class="pokemon-home">
   <div class="row">
-    <div class="col-md-3" *ngFor="let pokemon of pokemons.results">
+    <div class="col-12 col-sm-6 col-md-3" *ngFor="let pokemon of pokemons.results">
       <div class="card">
         <div class="card-body">
           <div class="text-center">
@@ -34,14 +27,5 @@
         </ul>
       </div>
     </div>
-  </div>
-</div>
-
-<div class="row">
-  <div class="col-md-12">
-    <nav class="pokemon-pagination text-center">
-      <a class="btn btn-outline-primary" href="#">Anterior</a>
-      <a class="btn btn-outline-primary" href="#">Próxima</a>
-    </nav>
   </div>
 </div>

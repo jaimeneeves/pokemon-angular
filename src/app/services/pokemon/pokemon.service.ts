@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { IListingOptions } from 'src/app/shared/utils';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,9 @@ export class PokemonService {
 
   private pokemons: Array<any> = [];
 
-  private limit: Number = 12;
+  // Pagination options
+  private limit: number = 12;
+  private offset: number = 0;
 
   constructor(private http: HttpClient) { }
 
@@ -21,11 +24,22 @@ export class PokemonService {
     return this.pokemons;
   }
 
+  getLimit() {
+    return this.limit;
+  }
+
+  getOffset() {
+    return this.offset;
+  }
+
   /**
    * List all pokemons
    */
-  findAll() {
-    return this.http.get(`https://pokeapi.co/api/v2/pokemon?limit=${this.limit}`);
+  findAll(options?: IListingOptions) {
+    const limit = options.limit ? options.limit : this.getLimit();
+    const offset = options.offset ? options.offset : this.getOffset();
+
+    return this.http.get(`https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`);
   }
 
   /**
