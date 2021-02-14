@@ -20,9 +20,7 @@ const routes: Routes = [
       }
     ]
   },
-  { path: '', redirectTo: '/pokemon', pathMatch: 'full' },
-  // { path: 'home', component: PokemonComponent },
-  // { path: 'pokemon/:id', component: PokemonDetailComponent }
+  { path: '', redirectTo: '/pokemon', pathMatch: 'full' }
 ];
 
 @NgModule({

@@ -11,8 +11,8 @@ import { IPokemonDetail, InitPokemonDetail } from 'src/app/modules/pokemon-detai
 })
 export class PokemonDetailComponent implements OnInit {
 
-  pokemonDetail: IPokemonDetail = InitPokemonDetail;
-  pokemons: [];
+  public pokemonDetail: IPokemonDetail = InitPokemonDetail;
+  public pokemons: [];
 
   constructor(
     private route: ActivatedRoute,

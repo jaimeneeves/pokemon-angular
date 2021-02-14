@@ -11,11 +11,12 @@ import { IListingOptions } from 'src/app/shared/utils';
 export class PokemonHomeComponent implements OnInit {
 
   public pokemons: IResPokemon = initResponse;
+
+  // Pagination
   public next: string;
   public prev: string;
-
-  page: number = 1;
-  listOpt: IListingOptions = {
+  public page: number = 1;
+  public listOpt: IListingOptions = {
     offset: 0
   };
 
@@ -56,12 +57,20 @@ export class PokemonHomeComponent implements OnInit {
     });
   }
 
+  /**
+   * Next page
+   * @param page
+   */
   paginationNext(page:number) {
     const nextPage = page + 1;
     this.page = nextPage;
     this.list();
   }
 
+  /**
+   * Prev page
+   * @param page
+   */
   paginationPrev(page:number) {
     if(page > 0) {
       const nextPage = page - 1;
