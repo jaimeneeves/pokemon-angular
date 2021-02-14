@@ -1,27 +1,47 @@
-# PokemonAngular
+# Pokemon Angular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.1.4.
+Pokemon Angular é um projeto construído com o framework [Angular](https://angular.io/), para consultar a API [Pokeapi](https://pokeapi.co), exibindo seus dados em duas páginas: Página inicial e Página de detalhes. A primeira página (**Página inicial**), lista todos os pokemons existentes, e a segunda página (**Página de detalhes**) mostra todas as informações do pokemon selecionado.
 
-## Development server
+## Stack
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+- [Nodejs](https://nodejs.org/en/)
+- [Angular](https://angular.io/)
+- [Sass](https://sass-lang.com/)
+- [Heroku](https://www.heroku.com/)
+- [Git](https://git-scm.com/)
 
-## Code scaffolding
+O Nodejs, Angular e Git precisam ser instalados localmente para executar a aplicação em sua máquina.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Esse foi gerado com [Angular CLI](https://github.com/angular/angular-cli) versão 11.1.4.
 
-## Build
+## Clonando o Projeto
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+```sh
+$ git clone https://github.com/dejaneves/pokemon-angular.git
+```
 
-## Running unit tests
+## Executando a Aplicação
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Após clocar o projeto, vá para a página **pokemon-angular**.
 
-## Running end-to-end tests
+```sh
+$ cd pokemon-angular
+```
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Instale as dependências da aplicação.
 
-## Further help
+```sh
+$ npm install
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Após a instalação das dependências execute `ng serve`. Geralmente o projeto é executado na porta `4200`, caso ela esteja ocupada, o Angular encontrará uma outra porta para executar a aplicação. Vamos supor que a porta `4200` esteja livre, abra seu browser nesse endereço `http://localhost:4200/`, você verá a aplicação sendo executado em modo `development`.
+
+
+## Tasks
+
+* `ng serve` Para executar o projeto localmente na versão **development**
+* `npm run build` Para buildar o projeto, e disponibilizá-lo do diretório `dist`
+* `npm run prod:build` Para buildar o projeto na versão de produção
+* `npm run start` Para subir um servidor web para o diretório `dist`
+* `npm run test` Para executar os testes unitários via Karma
+
