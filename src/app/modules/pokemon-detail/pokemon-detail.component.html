@@ -1,22 +1,21 @@
-<div class="row mt-4 mb-4">
+<div class="row mt-4 mb-4 pokemon-detail--button__actions">
   <div class="col">
-    <a class="btn btn-secondary" routerLink="/pokemon" role="button">Página Inicial</a>
+    <button class="btn btn-secondary" (click)="back()" role="button">Voltar [Página Inicial]</button>
   </div>
 </div>
+
 <div class="row">
   <div class="col-md-4">
     <div class="card">
-        <div class="card-header text-center">
-          <img class="card-img-top" src="{{pokemonDetail.sprites.other.dream_world.front_default}}" alt="Card image pokemon">
-        </div>
-        <div class="card-body text-center">
-          <h5 class="card-title text-capitalize">{{pokemonDetail.name}}</h5>
-        </div>
+      <div class="card-header text-center">
+        <img class="card-img-top" src="{{pokemonDetail.sprites.other.dream_world.front_default}}" alt="Card image pokemon">
+      </div>
+      <div class="card-body text-center">
+        <h5 class="card-title text-capitalize">{{pokemonDetail.name}}</h5>
+      </div>
     </div>
   </div>
-
   <div class="col-md-8">
-
     <div class="row">
       <div class="col">
         <ul class="list-inline">
@@ -26,7 +25,6 @@
         </ul>
       </div>
     </div>
-
     <div class="card mb-4">
       <div class="card-header">
         Abilidades
@@ -35,7 +33,6 @@
         <li class="list-group-item" *ngFor="let itensAbilities of pokemonDetail.abilities">{{itensAbilities.ability.name}}</li>
       </ul>
     </div>
-
     <div class="card mb-4">
       <div class="card-header">
         Movimentos

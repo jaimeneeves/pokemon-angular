@@ -13,18 +13,14 @@
   <div class="row">
     <div class="col-12 col-sm-6 col-md-3" *ngFor="let pokemon of pokemons.results">
       <div class="card">
+        <div class="card-header text-center">
+          <img src="{{pokemon.detail.sprites.front_default}}" alt="Card image pokemon">
+        </div>
         <div class="card-body">
-          <div class="text-center">
-            <img src="{{pokemon.detail.sprites.front_default}}" alt="Card image pokemon">
-          </div>
           <h5 class="card-title text-capitalize text-center">
             <a routerLink="{{pokemon.detail.id}}">{{pokemon.name}}</a>
           </h5>
         </div>
-        <div class="card-header font-weight-bolder">Abilidades</div>
-        <ul class="list-group list-group-flush" >
-          <li class="list-group-item" *ngFor="let abilityItem of pokemon.detail.abilities">{{abilityItem.ability.name}}</li>
-        </ul>
       </div>
     </div>
   </div>
