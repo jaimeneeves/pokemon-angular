@@ -7,9 +7,19 @@ import { Observable } from 'rxjs';
 })
 export class PokemonService {
 
+  private pokemons: Array<any> = [];
+
   private limit: Number = 12;
 
   constructor(private http: HttpClient) { }
+
+  setPokemons(pokemons) {
+    this.pokemons = pokemons;
+  }
+
+  getPokemons() {
+    return this.pokemons;
+  }
 
   /**
    * List all pokemons

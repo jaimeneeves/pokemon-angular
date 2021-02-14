@@ -1,4 +1,4 @@
-export interface ResPokemon {
+export interface IResPokemon {
   count: Number,
   next: any,
   previous: any,
