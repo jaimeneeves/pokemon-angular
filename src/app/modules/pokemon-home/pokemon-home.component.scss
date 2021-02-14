@@ -1,10 +1,10 @@
-.pokemon-home {
+.pokemon--home {
   .card {
     margin-bottom: 2.1rem !important;
   }
 }
 
-.pokemon-pagination {
+.pokemon--pagination {
   margin-bottom: 2rem;
   margin-top: 1rem;
 
@@ -13,19 +13,5 @@
   }
   > .btn {
     border-radius: 2rem;
-  }
-}
-
-.pokemon-footer {
-  padding: 2.5rem 0;
-  color: #999;
-  text-align: center;
-  background-color: #f9f9f9;
-  border-top: .05rem solid #e5e5e5;
-  bottom: 0;
-  position: relative;
-  width: 100%;
-  p:last-child {
-    margin-bottom: 0;
   }
 }
