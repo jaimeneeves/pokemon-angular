@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PokemonService } from 'src/app/services/pokemon/pokemon.service';
-import { ResPokemon, initResponse } from 'src/app/modules/pokemon-home/models/home';
+import { IResPokemon, initResponse } from 'src/app/modules/pokemon-home/models/home';
 
 @Component({
   selector: 'app-pokemon-home',
@@ -9,7 +9,7 @@ import { ResPokemon, initResponse } from 'src/app/modules/pokemon-home/models/ho
 })
 export class PokemonHomeComponent implements OnInit {
 
-  public pokemons: ResPokemon = initResponse;
+  public pokemons: IResPokemon = initResponse;
 
   constructor(private pokemonService: PokemonService) { }
 
@@ -33,6 +33,7 @@ export class PokemonHomeComponent implements OnInit {
           });
 
           this.pokemons.results = await Promise.all(results);
+          this.pokemonService.setPokemons(this.pokemons.results);
         }
       },
       error: (e) => {},

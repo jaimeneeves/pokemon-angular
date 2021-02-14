@@ -1,10 +1,49 @@
-<div class="row mt-5">
-  <div class="col-md-12">
+<div class="row mt-4 mb-4">
+  <div class="col">
+    <a class="btn btn-secondary" routerLink="/pokemon" role="button">Página Inicial</a>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-4">
     <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Nome pokemon</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <div class="card-header text-center">
+          <img class="card-img-top" src="{{pokemonDetail.sprites.other.dream_world.front_default}}" alt="Card image pokemon">
+        </div>
+        <div class="card-body text-center">
+          <h5 class="card-title text-capitalize">{{pokemonDetail.name}}</h5>
+        </div>
+    </div>
+  </div>
+
+  <div class="col-md-8">
+
+    <div class="row">
+      <div class="col">
+        <ul class="list-inline">
+          <li class="list-inline-item"><strong>#{{pokemonDetail.id}}</strong></li>
+          <li class="list-inline-item"><strong>Altura:</strong> {{pokemonDetail.height}}</li>
+          <li class="list-inline-item"><strong>Peso:</strong> {{pokemonDetail.weight}}</li>
+        </ul>
       </div>
+    </div>
+
+    <div class="card mb-4">
+      <div class="card-header">
+        Abilidades
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item" *ngFor="let itensAbilities of pokemonDetail.abilities">{{itensAbilities.ability.name}}</li>
+      </ul>
+    </div>
+
+    <div class="card mb-4">
+      <div class="card-header">
+        Movimentos
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item" *ngFor="let itensMove of pokemonDetail.moves">{{itensMove.move.name}}</li>
+      </ul>
     </div>
   </div>
 </div>
+<br/>
