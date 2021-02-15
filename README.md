@@ -2,8 +2,6 @@
 
 Pokemon Angular é um projeto construído com o framework [Angular](https://angular.io/), para consultar a API [Pokeapi](https://pokeapi.co), exibindo seus dados em duas páginas: Página inicial e Página de detalhes. A primeira página (**Página inicial**), lista todos os pokemons existentes, e a segunda página (**Página de detalhes**) mostra todas as informações do pokemon selecionado.
 
-[Endereço App](https://guarded-falls-06184.herokuapp.com/)
-
 ## Stack
 
 - [Nodejs](https://nodejs.org/en/)

@@ -4,6 +4,10 @@ node_js:
 
 cache: npm
 
+branches:
+  only:
+  - master
+
 install:
   - npm install
   - npm run prod:build
