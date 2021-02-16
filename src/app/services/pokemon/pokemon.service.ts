@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
 import { IListingOptions } from 'src/app/shared/utils';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -56,8 +56,8 @@ export class PokemonService {
    * Find pokemon by id
    * @param {Number} id
    */
-  findById(id) {
-    const pokemonId = id;
-    return this.http.get(`https://pokeapi.co/api/v2/pokemon/${pokemonId}`);
+  findById(term: string): Observable<{}> {
+    term = term.trim();
+    return this.http.get(`https://pokeapi.co/api/v2/pokemon/${term}`).pipe();
   }
 }
