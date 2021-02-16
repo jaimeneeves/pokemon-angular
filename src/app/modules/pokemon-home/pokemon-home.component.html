@@ -1,16 +1,26 @@
-<div class="row mt-3">
-  <div class="col-md-12">
-    <nav class="pokemon--pagination text-right">
-      <button class="btn"
-        [class.btn-outline-primary]="prev"
-        [ngClass]="{'btn-outline-secondary disabled': !prev}" (click)="paginationPrev(page)">Anterior</button>
-      <button type="button" class="btn btn-outline-primary" (click)="paginationNext(page)">Próxima</button>
-    </nav>
-  </div>
-</div>
+<div class="pokemon-home">
+  <div class="row mt-3 mb-4">
+    <div class="col-md-9 pokemon-home--search">
+      <div class="input-group">
+        <input type="text" class="form-control" (keyup.enter)="searchPokemon()" [(ngModel)]="searchName" placeholder="Digite o nome do pokemon...">
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary" type="button" (click)="searchPokemon()">Pesquisar</button>
+        </div>
+      </div>
+    </div>
 
-<div class="pokemon--home mb-5">
+    <div class="col-md-3">
+      <nav class="pokemon-home--pagination text-right">
+        <button class="btn"
+          [class.btn-outline-primary]="prev"
+          [ngClass]="{'btn-outline-secondary disabled': !prev}" (click)="paginationPrev(page)">Anterior</button>
+        <button type="button" class="btn btn-outline-primary" (click)="paginationNext(page)">Próxima</button>
+      </nav>
+    </div>
+  </div>
+
   <div class="row">
+    <h4 class="text-center text-black-50 mt-4" style="margin: auto;" *ngIf="searchNotFound">Esse pokemon não foi encontrado :(</h4>
     <div class="col-12 col-sm-6 col-md-3" *ngFor="let pokemon of pokemons.results">
       <div class="card">
         <div class="card-header text-center">

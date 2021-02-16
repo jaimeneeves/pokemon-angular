@@ -10,15 +10,15 @@ import { IListingOptions } from 'src/app/shared/utils';
 })
 export class PokemonHomeComponent implements OnInit {
 
-  public pokemons: IResPokemon = initResponse;
+  pokemons: IResPokemon = initResponse;
+  searchName: string;
+  searchNotFound: boolean = false;
 
   // Pagination
-  public next: string;
-  public prev: string;
-  public page: number = 1;
-  public listOpt: IListingOptions = {
-    offset: 0
-  };
+  next: string;
+  prev: string;
+  page: number = 1;
+  listOpt: IListingOptions = { offset: 0 };
 
   constructor(private pokemonService: PokemonService) { }
 
@@ -55,6 +55,29 @@ export class PokemonHomeComponent implements OnInit {
       error: (e) => {},
       complete: () => {}
     });
+  }
+
+  /**
+   * Search
+   */
+  searchPokemon() {
+    const name = this.searchName;
+    this.searchNotFound = false;
+    if(name) {
+      this.pokemonService.findById(name).subscribe({
+        next: (data: any) => {
+          this.pokemons.results.push({
+            name: data.name,
+            detail: data
+          });
+        },
+        error: (err) => {
+          if(err.status == 404) {
+            this.searchNotFound = true;
+          }
+        }
+      });
+    }
   }
 
   /**
