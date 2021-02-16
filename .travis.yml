@@ -1,0 +1,24 @@
+language: node_js
+node_js:
+  - 10
+
+cache: npm
+
+branches:
+  only:
+  - main
+
+install:
+  - npm install
+  - npm run prod:build
+
+script:
+  - echo "Skipping tests"
+
+deploy:
+  provider: heroku
+  api_key:
+    secure: b1d5309a-b27d-4195-8fd4-187c464747da
+  app: guarded-falls-06184
+  on:
+    branch: main
