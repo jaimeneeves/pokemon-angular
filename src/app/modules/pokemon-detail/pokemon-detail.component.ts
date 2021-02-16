@@ -34,7 +34,7 @@ export class PokemonDetailComponent implements OnInit {
    * Get pokemon information
    */
   getPokemon(): void {
-    const id = +this.route.snapshot.paramMap.get('id');
+    const id = this.route.snapshot.paramMap.get('id');
     const pokemonDetailSize = this.pokemonService.getPokemons().length;
 
     if(pokemonDetailSize > 0) {
