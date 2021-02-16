@@ -1,45 +1,42 @@
-<div class="row mt-4 mb-4 pokemon-detail--button__actions">
-  <div class="col">
-    <button class="btn btn-secondary" (click)="back()" role="button">Voltar [Página Inicial]</button>
-  </div>
-</div>
-
-<div class="row">
-  <div class="col-md-4">
-    <div class="card">
-      <div class="card-header text-center">
-        <img class="card-img-top" src="{{pokemonDetail.sprites.other.dream_world.front_default}}" alt="Card image pokemon">
-      </div>
-      <div class="card-body text-center">
-        <h5 class="card-title text-capitalize">{{pokemonDetail.name}}</h5>
-      </div>
+<div class="pokemon-detail">
+  <div class="row mt-4 mb-4 pokemon-detail--actions">
+    <div class="col">
+      <button class="btn btn-secondary" (click)="back()" role="button">Voltar [Página Inicial]</button>
     </div>
   </div>
-  <div class="col-md-8">
-    <div class="row">
-      <div class="col">
-        <ul class="list-inline">
-          <li class="list-inline-item"><strong>#{{pokemonDetail.id}}</strong></li>
-          <li class="list-inline-item"><strong>Altura:</strong> {{pokemonDetail.height}}</li>
-          <li class="list-inline-item"><strong>Peso:</strong> {{pokemonDetail.weight}}</li>
+  <div class="row pokemon-detail--body">
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-header text-center">
+          <img class="card-img-top" src="{{pokemonDetail.sprites.other.dream_world.front_default}}" alt="Card image pokemon">
+        </div>
+        <div class="card-body text-center">
+          <h5 class="card-title text-capitalize">{{pokemonDetail.name}}</h5>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <div class="row">
+        <div class="col">
+          <ul class="list-inline">
+            <li class="list-inline-item"><strong>#{{pokemonDetail.id}}</strong></li>
+            <li class="list-inline-item"><strong>Altura:</strong> {{pokemonDetail.height}}</li>
+            <li class="list-inline-item"><strong>Peso:</strong> {{pokemonDetail.weight}}</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card mb-4">
+        <div class="card-header">
+          Abilidades
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item" *ngFor="let itensAbilities of pokemonDetail.abilities">{{itensAbilities.ability.name}}</li>
         </ul>
       </div>
-    </div>
-    <div class="card mb-4">
-      <div class="card-header">
-        Abilidades
+      <div class="mb-4 moves">
+        <h4>Movimentos</h4>
+        <span class="badge badge-pill badge-secondary" *ngFor="let itensMove of pokemonDetail.moves">{{itensMove.move.name}}</span>
       </div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item" *ngFor="let itensAbilities of pokemonDetail.abilities">{{itensAbilities.ability.name}}</li>
-      </ul>
-    </div>
-    <div class="card mb-4">
-      <div class="card-header">
-        Movimentos
-      </div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item" *ngFor="let itensMove of pokemonDetail.moves">{{itensMove.move.name}}</li>
-      </ul>
     </div>
   </div>
 </div>

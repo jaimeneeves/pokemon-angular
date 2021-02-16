@@ -1,5 +1,15 @@
-.pokemon-detail--button__actions{
-  button + a {
-    margin-left: 5px;
+.pokemon-detail {
+  .pokemon-detail--actions {
+    button + a {
+      margin-left: 5px;
+    }
+  }
+  .pokemon-detail--body {
+    .moves {
+      span {
+        margin: 2px;
+      }
+    }
   }
 }
+
