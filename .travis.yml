@@ -1,24 +1,19 @@
 language: node_js
 node_js:
-  - 10
-
+- 10
 cache: npm
-
 branches:
   only:
   - main
-
 install:
-  - npm install
-  - npm run prod:build
-
+- npm install
+- npm run prod:build
 script:
-  - echo "Skipping tests"
-
+- echo "Skipping tests"
 deploy:
   provider: heroku
   api_key:
-    secure: b1d5309a-b27d-4195-8fd4-187c464747da
+    secure: BUGH+VW/4CoizDEbmTU4iPxrMetkzwFkjk2H6+Qr9TuJ2bwnOyYoai8K3yZnjpmJl7VhMhcZqbspDY2wPYMdyWZQ1FKYQisNsQ4rbo/u6lGFt8DZKlwcovpQXscrGtmZFVqybd6hl9XnbRKhjE01+t7//O9z7h2PLoWmpdvoepYrz7P+dLmAsVw3e4XM2W22MHJqJkI/IlKnwI0MnSxf0zMDEEMO9puaKVUnfS+nS6skxuXQOALlJOyZUoQ7YTELRSi4ycPJ9M2SeqmvDseQ+ASdjoHjxFX0t+UPCmdRUpzT3jSd+iqZVJM0xVdAPuOJ3d6GPPpn8+492ozY6fI7MtmEgnBqnLFxFTujPrhHR+JBblAOJzeHIaX0PF6lzVfD8iXYD7ZALbmL5xIKIMY2OKgB1rvc/6GalJ9MH9VMxH5nDs73kKCR7JkDUkvLr3UE/3jImSh3IAtC/BCRPiCitmukiuSMijXtOBvRRvOE2JRjhGPvDFSRS0lyk5wSxq+r6E92qU7WQuZBE6THXe1tnNmJhMFhZiZRBtgZh/poqNYmBWOylM9MOtdzB2hZUpo0nKKikfV3sHd7Jkx7loeHydtBjN2ST3O4NJcTbwiphfdO0nNlIKhsTINf3HBajHl2nvsU13OhUJHus26yBvpeLjJk7AxcUN0Gq9WxM9Y6NS4=
   app: guarded-falls-06184
   on:
     branch: main
