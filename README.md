@@ -14,7 +14,7 @@ Pokemon Angular é um projeto construído com o framework [Angular](https://angu
 
 O Nodejs, Angular e Git precisam ser instalados localmente para executar a aplicação em sua máquina.
 
-Esse projeto foi gerado com [Angular CLI](https://github.com/angular/angular-cli) versão 11.1.4.
+O projeto foi gerado com [Angular CLI](https://github.com/angular/angular-cli) versão 11.1.4.
 
 ![Home Pokemon Angular](https://user-images.githubusercontent.com/6599252/108209136-b1b46a00-7108-11eb-92b0-02daa1cd2d97.png)
 
