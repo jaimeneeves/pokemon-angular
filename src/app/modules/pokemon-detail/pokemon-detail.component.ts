@@ -38,17 +38,29 @@ export class PokemonDetailComponent implements OnInit {
     const pokemonDetailSize = this.pokemonService.getPokemons().length;
 
     if(pokemonDetailSize > 0) {
-      this.pokemonDetail = this.pokemonService.getPokemons().map(item => {
+      const pokemonDetail = this.pokemonService.getPokemons().map(item => {
         return item.detail;
-      }).filter(detail => {
-        return detail.id == id;
-      })[0];
+      }).filter(detail => { return detail.id == id });
+
+      if(pokemonDetail.length === 0) {
+        this.getPokemonById(id);
+      } else {
+        this.pokemonDetail = pokemonDetail[0];
+      }
     } else {
-      this.pokemonService.findById(id).subscribe({
-        next: (data:any) => {
-          this.pokemonDetail = data;
-        }
-      });
+      this.getPokemonById(id);
     }
+  }
+
+  /**
+   * Get pokemon by id
+   * @param term
+   */
+  getPokemonById(term: string): void {
+    this.pokemonService.findById(term).subscribe({
+      next: (data:any) => {
+        this.pokemonDetail = data;
+      }
+    });
   }
 }
