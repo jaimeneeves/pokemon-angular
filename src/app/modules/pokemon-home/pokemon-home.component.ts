@@ -66,10 +66,13 @@ export class PokemonHomeComponent implements OnInit {
     if(name) {
       this.pokemonService.findById(name).subscribe({
         next: (data: any) => {
-          this.pokemons.results.push({
-            name: data.name,
-            detail: data
-          });
+          if(data) {
+            this.pokemons.results = [];
+            this.pokemons.results.push({
+              name: data.name,
+              detail: data
+            });
+          }
         },
         error: (err) => {
           if(err.status == 404) {
