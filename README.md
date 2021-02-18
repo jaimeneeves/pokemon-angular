@@ -16,7 +16,9 @@ O Nodejs, Angular e Git precisam ser instalados localmente para executar a aplic
 
 O projeto foi gerado com [Angular CLI](https://github.com/angular/angular-cli) versão 11.1.4.
 
-![Home Pokemon Angular](https://user-images.githubusercontent.com/6599252/108209136-b1b46a00-7108-11eb-92b0-02daa1cd2d97.png)
+![home-pokemon-angular](https://user-images.githubusercontent.com/6599252/108418446-0db5e600-7210-11eb-80f0-50c74b9c2512.png)
+
+![pokemon-detail](https://user-images.githubusercontent.com/6599252/108418513-20301f80-7210-11eb-9880-a7f0c20eea72.png)
 
 ## Clonando o Projeto
 
