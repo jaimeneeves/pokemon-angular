@@ -5,6 +5,7 @@ cache: npm
 branches:
   only:
   - main
+  - stable
 install:
 - npm install
 - npm run prod:build
